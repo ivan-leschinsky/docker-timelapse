@@ -38,6 +38,7 @@ docker run \
     erikdevries/timelapse \
     -p Xiaomi
     -d 1
+    -s 60
     -f mp4
     -r 1920
 ```
@@ -52,6 +53,7 @@ In the above command a couple of things happen:
 * `-d 1` tells the application to create a timelapse with files from 1 **day** ago (optional, by default the current date is used, this is a number, so providing 14 means, create a timelapse with files from 2 weeks ago)
 * `-f mp4` tells the application to output the timelapse in MP4 **format** (optional, mp4 by default, gif is the other option, which will output a optimized animated gif)
 * `-r 1920` tell the application to **resize** the output to the given width (optional, 1280 by default, aspect ratio is preserved, for gif use something like 320 to keep the filesize down)
+* `-s 30` tell the application to use 30 (default) frames per Second on output video.
 
 This Docker image assumes the following files exist: /input/[prefix]-[currentdate]-*.jpg
 
